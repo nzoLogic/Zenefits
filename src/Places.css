@@ -1,0 +1,20 @@
+.display {
+  display: 'visible';
+}
+.hide {
+  display: 'none';
+}
+.place:hover{
+  transition: .4s;
+  margin: 6px 0 12px 0;
+  box-shadow: 10px 5px 8px #6b6767;
+  cursor: pointer;
+}
+
+.active{
+  transition: .3s;
+  margin: 6px 0 12px 0;
+  box-shadow: 10px 5px 8px #6b6767;
+  background-color: rgba(221, 233, 255, 0.32);
+  cursor: pointer;
+}
