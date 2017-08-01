@@ -9,10 +9,8 @@ import {
   SideNav, 
   SideNavItem, 
   Button, 
-  Collapsible, 
   CollapsibleItem } from 'react-materialize'
-import Place from './Place.js'
-import { getPlaces, onDelete  } from './utils/PlaceStorageHelper.js'
+import { onDelete } from './utils/PlaceStorageHelper.js'
 
 const UserPlaces = (props) => {
   const places = Object.values(props.places)

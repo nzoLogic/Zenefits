@@ -3,7 +3,7 @@
 */
 
 import React, { Component } from 'react'
-import { Collection, Row } from 'react-materialize'
+import { Collection } from 'react-materialize'
 import Place from './Place.js'
 import { 
   mountPlaceElementToMap 
@@ -17,15 +17,6 @@ const CONTAINER_STYLE = {
   minWidth: `400px`,
   maxWidth: `400px`,
   overflow: `visible`,
-  overflow: `scroll`
-}
-const BLOCK_STYLE = {
-  height: `11%`,
-  backgroundColor: `#211a9c`,
-}
-const PLACE_CONTAINER = {
-  height: `89%`,
-  overflow: `visible !important`,
   overflowY: `scroll`
 }
 
@@ -50,11 +41,7 @@ class PlaceDisplay extends Component {
         mountPlaceElementToMap(this.DOMref, props.controlPosition, mapRef)}) 
     }
   }
-  
-  componentDidUpdate(){
-    const { activeIndex } =  this.state
-    const parent = this.DOMref.children[1]
-  }
+
   render(){
     const { places } = this.props 
     const { activeIndex } = this.props 

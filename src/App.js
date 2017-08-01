@@ -7,10 +7,9 @@
 import React, { Component } from 'react'
 import './App.css'
 import Map from './Map.js'
-import { Row } from 'react-materialize'
 import UserPlaces from './UserPlaces.js'
 import { checkStoredLocation, saveUserLocation } from './utils/UserHelpers.js'
-import { getPlaces, onDelete } from './utils/PlaceStorageHelper.js'
+import { getPlaces } from './utils/PlaceStorageHelper.js'
 
 class App extends Component {
   constructor(props){
@@ -37,7 +36,6 @@ class App extends Component {
   };
   componentWillMount(){
     this.state.location === null && this.getUsersLocation()
-    console.log('no')
   }
   onMapLoad(map){
     this._map = map 
@@ -51,6 +49,7 @@ class App extends Component {
     const { markers } = this.state
     this.setState({activeIndex: markers.findIndex((marker) => {
       if(marker === target) return{ ...marker, showInfo: true}
+      return null
     })})
   }
   handleSearchBoxMounted(searchBox){
@@ -83,7 +82,7 @@ class App extends Component {
   }
   recenter(map){
     const bounds = this._map.getBounds()
-    this.setState({bounds, bounds})
+    this.setState({bounds: bounds})
   }
   getUsersLocation(){
     //updates state and lastLocation(stored in browser) based on users location

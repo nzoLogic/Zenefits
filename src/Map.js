@@ -8,8 +8,7 @@
 
 
 import React, { Component } from 'react'
-import { withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
-import PropTypes from 'prop-types'
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import PlaceDisplay from './PlaceDisplay.js'
 const SearchBox = require('react-google-maps/lib/places/SearchBox').default
 
@@ -30,9 +29,7 @@ const INPUT_STYLE = {
 };
 
 const Map = (props) => {
-  const { markers } = props
-  const { places }  = props 
-  
+  const { markers } = props  
   return(
       <GoogleMap
         ref={props.onMapLoad}
