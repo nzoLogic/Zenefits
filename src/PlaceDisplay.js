@@ -25,6 +25,7 @@ class PlaceDisplay extends Component {
     activeCounter: 0,
     mapRendered: false 
   }
+
   componentWillReceiveProps(nextProps){
     const { mapRendered } = this.state
     const { props } = this 
@@ -38,7 +39,10 @@ class PlaceDisplay extends Component {
         mountPlaceElementToMap(this.DOMref, props.controlPosition, mapRef)}) 
     }
   }
-  
+  // shouldComponentUpdate(props, nextState){
+  //   console.log('should update...', props, this.props)
+  //   return this.props !== props
+  // }
   componentDidUpdate(){
     const { activeIndex } =  this.state
     if( !this.placeList ) this.placeList = this.DOMref.children[0]
@@ -54,7 +58,7 @@ class PlaceDisplay extends Component {
         }}
         style={CONTAINER_STYLE}
         className={`${places.length ? 'display' : 'hide' }`} >
-          <Collection>
+          <Collection >
             { places.map( (place, index) => (
               <Place
                 className="place" 
@@ -66,6 +70,7 @@ class PlaceDisplay extends Component {
             ))
           }
         </Collection>
+        
       </div>
     )
   }
