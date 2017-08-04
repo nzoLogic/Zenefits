@@ -5,13 +5,11 @@
 
 import React from 'react'
 import { Toast, Card, Button } from 'react-materialize'
-import * as Materialize from 'react-materialize' 
 import './Places.css'
 
 const Place = (props) => {
   const { place } = props 
   const activeClass = props.active ? 'active' : '' 
-  console.log(Materialize)
   return(
       <Card className={`place ${activeClass} `}>
         <Button flat

@@ -39,10 +39,6 @@ class PlaceDisplay extends Component {
         mountPlaceElementToMap(this.DOMref, props.controlPosition, mapRef)}) 
     }
   }
-  // shouldComponentUpdate(props, nextState){
-  //   console.log('should update...', props, this.props)
-  //   return this.props !== props
-  // }
   componentDidUpdate(){
     const { activeIndex } =  this.state
     if( !this.placeList ) this.placeList = this.DOMref.children[0]
