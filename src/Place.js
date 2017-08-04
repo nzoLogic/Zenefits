@@ -18,7 +18,7 @@ const Place = (props) => {
             backgroundColor: 'transparent'
           }} 
           key={0} 
-          waves='light' 
+          waves='dark' 
           className='blue-text right hoverable' 
           icon='add'
           onClick={props.onAdd} />
