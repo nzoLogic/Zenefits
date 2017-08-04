@@ -50,21 +50,27 @@ class Tutorial extends Component {
   animate = () => {
     const _tutorial = this._tutorial
     let index = this.state.index + 1
-    if(_tutorial[index]){
+    if(index === 2){
+      _tutorial[index].className += ' fade'
+      _tutorial[index + 1].className += ' fade'
+      this.setState({index: index + 1})
+    }
+    else if(_tutorial[index]){
       _tutorial[index].className += ' fade'
       this.setState({index: index})
     }
-    else clearInterval(this.state.tutorialId) 
-    console.log(_tutorial[index])
-    
+    else {
+      clearInterval(this.state.tutorialId) 
+      this._background.style.display = 'none'
+    }
   }
   
   setDomRef = (e) => {
     if(e && !this._tutorial) this._tutorial = [...e.children] 
+    if( e && !this._background ) this._background = e 
   }
   
   componentDidMount(){
-    console.log(this._tutorial)
     let tutorialId = setInterval(this.animate, 6000)
     this.setState({tutorialId: tutorialId})
   }
