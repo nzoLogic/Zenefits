@@ -25,7 +25,7 @@ class PlaceDisplay extends Component {
     super(props)
   }
   state = {
-    activeIndex: 0,
+    activeCounter: 0,
     mapRendered: false 
   }
   componentWillReceiveProps(nextProps){
@@ -41,7 +41,11 @@ class PlaceDisplay extends Component {
         mountPlaceElementToMap(this.DOMref, props.controlPosition, mapRef)}) 
     }
   }
-
+  
+  componentDidUpdate(){
+    const { activeIndex } =  this.state
+    if( !this.placeList ) this.placeList = this.DOMref.children[0]
+  }
   render(){
     const { places } = this.props 
     const { activeIndex } = this.props 

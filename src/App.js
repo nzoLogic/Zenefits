@@ -100,10 +100,12 @@ class App extends Component {
     const { state } = this  
     return(
       <div className="App">
-        <UserPlaces 
-          places={state.usersSavedPlaces} 
-          handleDeletedPlace={this.handleDeletedPlace}
-          />
+        { this._map ? 
+                <UserPlaces 
+                places={state.usersSavedPlaces} 
+                handleDeletedPlace={this.handleDeletedPlace} />
+              : null 
+           }
         <Map
           loadingElement={
             <div style={{ height: `100%` }}>
