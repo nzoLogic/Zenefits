@@ -4,7 +4,7 @@
 */
 
 import React from 'react'
-import { Toast, Card, Button } from 'react-materialize'
+import { Card, Button } from 'react-materialize'
 import './Places.css'
 
 const Place = (props) => {
