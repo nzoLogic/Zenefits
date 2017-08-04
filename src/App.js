@@ -26,7 +26,6 @@ class App extends Component {
     this.handleAddPlace = this.handleAddPlace.bind(this)
   }
   state = {
-    needsTutorial: isNewVisitor(),
     bounds: null,
     location: checkStoredLocation('lastLocation') || null,
     center: this.location || {
@@ -41,6 +40,7 @@ class App extends Component {
     this.state.location === null && this.getUsersLocation()
   }
   onMapLoad(map){
+    console.log('map loaded....')
     this._map = map 
     this._needsTutorial = isNewVisitor()
   }

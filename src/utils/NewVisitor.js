@@ -3,8 +3,8 @@ function isNewVisitor(){
   console.log(hasVisited)
   if(hasVisited) return false 
   else{
-    // window.localStorage.setItem('hasVisited', true)
-    return true 
+    window.localStorage.setItem('hasVisited', true)
+    return true
   }
 }
 
