@@ -14,17 +14,6 @@ import { getPlaces } from './utils/PlaceStorageHelper.js'
 import isNewVisitor from './utils/NewVisitor.js'
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.onMapLoad = this.onMapLoad.bind(this)
-    this.onIdle = this.onIdle.bind(this)
-    this.recenter = this.recenter.bind(this)
-    this.handleSearchBoxMounted = this.handleSearchBoxMounted.bind(this)
-    this.onPlacesChanged = this.onPlacesChanged.bind(this)
-    this.handleMarkerClick = this.handleMarkerClick.bind(this)
-    this.handleDeletedPlace = this.handleDeletedPlace.bind(this)
-    this.handleAddPlace = this.handleAddPlace.bind(this)
-  }
   state = {
     bounds: null,
     location: checkStoredLocation('lastLocation') || null,
@@ -39,33 +28,33 @@ class App extends Component {
   componentWillMount(){
     this.state.location === null && this.getUsersLocation()
   }
-  onMapLoad(map){
+  onMapLoad = map => {
     console.log('map loaded....')
     this._map = map 
     this._needsTutorial = isNewVisitor()
   }
-  onIdle(map){
+  onIdle = map => {
     this.setState({
       bounds: this._map.getBounds()
     })
   }
-  handleMarkerClick(target){
+  handleMarkerClick = (target) => {
     const { markers } = this.state
     this.setState({activeIndex: markers.findIndex((marker) => {
       if(marker === target) return{ ...marker, showInfo: true}
       return null
     })})
   }
-  handleSearchBoxMounted(searchBox){
+  handleSearchBoxMounted = searchBox => {
     this._searchBox = searchBox
   }
-  handleDeletedPlace(places){
+  handleDeletedPlace = places =>{
     this.setState({usersSavedPlaces: places})
   }
-  handleAddPlace(places){
+  handleAddPlace = places => {
     this.setState({usersSavedPlaces: places})
   }
-  onPlacesChanged(){
+  onPlacesChanged = () => {
     // updates marker, places, center and activeIndex state based on returned Places API results
 
     const places = this._searchBox.getPlaces()
@@ -83,11 +72,11 @@ class App extends Component {
       activeIndex: activeIndex
     })
   }
-  recenter(map){
+  recenter = map => {
     const bounds = this._map.getBounds()
     this.setState({bounds: bounds})
   }
-  getUsersLocation(){
+  getUsersLocation = () => {
     //updates state and lastLocation(stored in browser) based on users location
     
     navigator.geolocation.getCurrentPosition(({ coords },{ latitude, longitude }= coords) =>{
