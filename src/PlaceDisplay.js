@@ -21,9 +21,6 @@ const CONTAINER_STYLE = {
 }
 
 class PlaceDisplay extends Component {
-  constructor(props){
-    super(props)
-  }
   state = {
     activeCounter: 0,
     mapRendered: false 

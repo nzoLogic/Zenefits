@@ -7,7 +7,7 @@
 
 
 
-import React, { Component } from 'react'
+import React from 'react'
 import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import PlaceDisplay from './PlaceDisplay.js'
 const SearchBox = require('react-google-maps/lib/places/SearchBox').default
