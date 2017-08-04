@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import AlertContainer from 'react-alert'
 
-const ALERT_OPTIONS = {
-  offest: 14,
-  position: 'top right',
-  theme: 'dark',
-  time: 2000,
-  transition: 'scale'
-}
-
 class SaveAlert extends Component {
   alertOptions = {
     offest: 14,
