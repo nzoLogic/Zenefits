@@ -25,6 +25,7 @@ const UserPlaces = (props) => {
           <Button id="users-places"
             floating
             icon='dehaze'
+            className='cyan'
             style={{
               position: `fixed`,
               top: `36px`,
