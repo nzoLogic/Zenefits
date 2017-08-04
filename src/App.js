@@ -8,8 +8,10 @@ import React, { Component } from 'react'
 import './App.css'
 import Map from './Map.js'
 import UserPlaces from './UserPlaces.js'
+import Tutorial from './Tutorial.js'
 import { checkStoredLocation, saveUserLocation } from './utils/UserHelpers.js'
 import { getPlaces } from './utils/PlaceStorageHelper.js'
+import isNewVisitor from './utils/NewVisitor.js'
 
 class App extends Component {
   constructor(props){
@@ -24,6 +26,7 @@ class App extends Component {
     this.handleAddPlace = this.handleAddPlace.bind(this)
   }
   state = {
+    needsTutorial: isNewVisitor(),
     bounds: null,
     location: checkStoredLocation('lastLocation') || null,
     center: this.location || {
@@ -39,6 +42,7 @@ class App extends Component {
   }
   onMapLoad(map){
     this._map = map 
+    this._needsTutorial = isNewVisitor()
   }
   onIdle(map){
     this.setState({
@@ -96,15 +100,17 @@ class App extends Component {
   }
   
   render(){
-    const { state } = this  
+    const { state } = this
+
     return(
       <div className="App">
         { this._map ? 
                 <UserPlaces 
                 places={state.usersSavedPlaces} 
-                handleDeletedPlace={this.handleDeletedPlace} />
+                handleDeletedPlace={this.handleDeletedPlace} /> 
               : null 
-           }
+        }
+        { this._map && this._needsTutorial && <Tutorial />}
         <Map
           loadingElement={
             <div style={{ height: `100%` }}>
