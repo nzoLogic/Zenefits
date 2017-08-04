@@ -1,4 +1,12 @@
 ## Zenefits Places Extravaganza by Aaron Steele
+### New Features
+* Tutorial for new users detailing features and navigation
+* Tutorial displays only for new users
+* Alert users once they've successfully saved a place  
+* To replay the tutorial enter the following code in your browser console 
+```
+localStorage.removeItem('hasVisited')
+```
 
 ### Installation 
 * Unzip file 
