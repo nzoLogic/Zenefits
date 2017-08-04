@@ -9,6 +9,7 @@ import './App.css'
 import Map from './Map.js'
 import UserPlaces from './UserPlaces.js'
 import Tutorial from './Tutorial.js'
+import SaveAlert from './SaveAlert.js'
 import { checkStoredLocation, saveUserLocation } from './utils/UserHelpers.js'
 import { getPlaces } from './utils/PlaceStorageHelper.js'
 import isNewVisitor from './utils/NewVisitor.js'
@@ -52,7 +53,7 @@ class App extends Component {
     this.setState({usersSavedPlaces: places})
   }
   handleAddPlace = places => {
-    this.setState({usersSavedPlaces: places})
+    this.setState({usersSavedPlaces: places}, this.alertHelper.showAlert)
   }
   onPlacesChanged = () => {
     // updates marker, places, center and activeIndex state based on returned Places API results
@@ -127,6 +128,7 @@ class App extends Component {
           onMarkerClick={this.handleMarkerClick}
           activeIndex={state.activeIndex || 0}
         />
+      <SaveAlert ref={e => this.alertHelper = e }/>
       </div>
     )
   }
