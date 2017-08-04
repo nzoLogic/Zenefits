@@ -4,13 +4,14 @@
 */
 
 import React from 'react'
-import { Card, Button } from 'react-materialize'
+import { Toast, Card, Button } from 'react-materialize'
+import * as Materialize from 'react-materialize' 
 import './Places.css'
 
 const Place = (props) => {
   const { place } = props 
   const activeClass = props.active ? 'active' : '' 
-
+  console.log(Materialize)
   return(
       <Card className={`place ${activeClass} `}>
         <Button flat
@@ -18,7 +19,7 @@ const Place = (props) => {
             backgroundColor: 'transparent'
           }} 
           key={0} 
-          waves='dark' 
+          waves='teal' 
           className='blue-text right hoverable' 
           icon='add'
           onClick={props.onAdd} />
