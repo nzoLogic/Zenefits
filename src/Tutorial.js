@@ -43,12 +43,9 @@ const BUTTON_CIRCLE = {
 }
 
 class Tutorial extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
+    state = {
       index: 0
     }
-  }
   
   animate = () => {
     const _tutorial = this._tutorial
