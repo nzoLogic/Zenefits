@@ -1,5 +1,5 @@
 /* 
-    Stateful component for displaying user's saved places 
+    Stateless component for displaying user's saved places 
     
 */
 
