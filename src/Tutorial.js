@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
 import './Tutorial.css'
 
-const TUTORIAL_BACKGROUND = {
-  zIndex: '996', 
-  height: '100vh', 
-  width: '100vw',
-  position: 'absolute',
-  backgroundColor: 'rgba(0, 0, 0, .77)'
-}
 const SAVED_PLACES = {
   width: '800px',
   height: '800px',
@@ -59,10 +52,10 @@ class Tutorial extends Component {
   
   animate = () => {
     const _tutorial = this._tutorial
-    let index = this.state.index 
+    let index = this.state.index + 1
     if(_tutorial[index]){
       _tutorial[index].className += ' fade'
-      this.setState({index: index+1})
+      this.setState({index: index})
     }
     else clearInterval(this.state.tutorialId) 
     console.log(_tutorial[index])
@@ -74,14 +67,23 @@ class Tutorial extends Component {
   }
   
   componentDidMount(){
-    // this.startTutorial(this.animate, 1000)
+    console.log(this._tutorial)
     let tutorialId = setInterval(this.animate, 6000)
     this.setState({tutorialId: tutorialId})
-    console.log('component mounted')
   }
   render(){
     return(
-      <div style={TUTORIAL_BACKGROUND} ref={this.setDomRef}>
+      <div className="tutorial-background" ref={this.setDomRef}>
+        <div className="tutorial-welcome white-text hidden fade">
+          <h3>Welcome to <b>Places Search</b></h3>
+          <p className="center">powered by Google</p>
+        </div>
+        <div className="tutorial-search white-text hidden">
+          <input id="demo-search" placeholder="Find places near you"></input>
+          <label for="demo-search" className="white-text">
+            <h6>Search for awesome places near you</h6>
+          </label>
+        </div>
         <div style={SAVED_PLACES} className="hidden">
           <div id="places-background" className="cyan" style={TUTORIAL_TARGET} >
             <div className="white-text" style={TUTORIAL_CONTENT}>

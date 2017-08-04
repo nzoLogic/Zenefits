@@ -65,7 +65,6 @@ class App extends Component {
     // updates marker, places, center and activeIndex state based on returned Places API results
 
     const places = this._searchBox.getPlaces()
-    console.log(places[0])
     const markers = places.map(place => ({
       position: place.geometry.location,
       place: place 

@@ -56,7 +56,6 @@ const UserPlaces = (props) => {
             ))
           }
         </SideNav>
-      <Tutorial />
     </div>
   )
 }

@@ -1,15 +1,113 @@
-.fade { 
-  animation: fadeIn 6s ease-in-out;
+.tutorial-background {
+    z-index: 996;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .77);
 }
-.fadeChild { 
-  animation: fadeIn 6s ease-in-out;
+
+.tutorial-welcome {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+.tutorial-search {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tutorial-search input {
+  box-sizing: border-box !important;
+  border: 1px solid transparent !important;
+  background-color: #fff !important;
+  width: 286px !important;
+  height: 38px !important;
+  font-size: 14px !important;
+  margin: 26px 0 0 46px !important;
+  padding: 0 12px !important;
+  z-index: 999 !important;
+}
+.tutorial-search label{
+  display: inline-block;
+  text-align: left;
+  margin-left: 28px;
+}
+
+.SAVED-PLACES {
+    width: 800px;
+    height: 800px;
+    visibility: visibile;
+    right: -348px;
+    top: -327px;
+    position: fixed;
+    z-index: 996;
+}
+
+.TUTORIAL-TARGET {
+    position: absolute;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    transition: 2s;
+}
+
+.TUTORIAL-CONTENT {
+    width: 456px;
+    height: 500px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 56px;
+    vertical-align: top;
+    margin-top: 40%;
+    position: absolute;
+    display: table-cell;
+}
+
+.BUTTON-CIRCLE {
+    top: 16px;
+    right: 25px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 996;
+}
+
+.fade {
+    animation: slow-fade 6s ease-in-out;
+}
+
+.fade-background {
+    animation: quick-fade .7s;
+}
+
 .hidden {
-  opacity: 0;
+    opacity: 0;
 }
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { opacity: 0; }
+
+@keyframes slow-fade {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes quick-fade  {
+  from{ opacity: 0; }
+  to{ opacity: 1; }
 }
