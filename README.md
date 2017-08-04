@@ -9,7 +9,7 @@ localStorage.removeItem('hasVisited')
 ```
 
 ### Installation 
-* Unzip file 
+* fork/clone repo
 * run npm install in the root directory  
 * npm run (listens on localhost:3000)
 
