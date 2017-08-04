@@ -76,7 +76,7 @@ class Tutorial extends Component {
   }
   render(){
     return(
-      <div className="tutorial-background" ref={this.setDomRef}>
+      <div className="tutorial-background fade-background" ref={this.setDomRef}>
         <div className="tutorial-welcome white-text hidden fade">
           <h3>Welcome to <b>Places Search</b></h3>
           <p className="center">powered by Google</p>
