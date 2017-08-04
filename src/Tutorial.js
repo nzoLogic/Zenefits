@@ -91,7 +91,6 @@ class Tutorial extends Component {
           </div>
         </div>
         <div className="hidden" style={BUTTON_CIRCLE} />
-        <div className="hidden" style={BUTTON_CIRCLE} />
       </div>
     )
   }
