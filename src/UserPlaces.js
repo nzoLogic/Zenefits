@@ -3,7 +3,6 @@
     
 */
 
-
 import React from 'react'
 import { 
   SideNav, 
@@ -11,7 +10,6 @@ import {
   Button, 
   CollapsibleItem } from 'react-materialize'
 import { onDelete } from './utils/PlaceStorageHelper.js'
-import Tutorial from './Tutorial.js'
 
 const UserPlaces = (props) => {
   const places = Object.values(props.places)
