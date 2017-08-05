@@ -1,4 +1,4 @@
-## Zenefits Places Extravaganza by Aaron Steele
+## [Google Places Clone](https://places-clone.herokuapp.com/) by Aaron Steele
 ### New Features
 * Tutorial for new users detailing features and navigation
 * Tutorial displays only for new users
