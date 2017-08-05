@@ -52,7 +52,7 @@ class Tutorial extends Component {
     const _tutorial = this._tutorial
     let index = this.state.index + 1
     if(index === 2){
-      _tutorial[index].className += ' fade'
+      _tutorial[index].className += ' show'
       _tutorial[index + 1].className += ' fade'
       this.setState({index: index + 1})
     }
@@ -88,9 +88,10 @@ class Tutorial extends Component {
             <h6>Search for awesome places near you</h6>
           </label>
         </div>
+        <Button floating 
+          icon="dehaze" 
+          className="hidden cyan tutorial-button"/>
         <div style={SAVED_PLACES} className="hidden">
-        
-          
           <div id="places-background" className="cyan" style={TUTORIAL_TARGET} >
             <div className="white-text" style={TUTORIAL_CONTENT}>
               <h5>Save Your Places</h5>
@@ -99,9 +100,7 @@ class Tutorial extends Component {
             </div>      
           </div>
         </div>
-        <Button floating 
-          icon="dehaze" 
-          className="cyan tutorial-button "/>
+
        </div>
     )
   }

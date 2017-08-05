@@ -55,7 +55,7 @@
 }
 
 .fade {
-    animation: slow-fade 6s ease-in-out;
+    animation: slow-fade 6s ease-in-out !important;
 }
 
 .fade-background {
@@ -64,6 +64,9 @@
 
 .hidden {
     opacity: 0;
+}
+.show {
+  opacity: 1;
 }
 
 @keyframes slow-fade {
