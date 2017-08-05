@@ -32,17 +32,6 @@ const TUTORIAL_CONTENT = {
   display: 'table-cell',
 }
 
-const BUTTON_CIRCLE = {
-  top: '16px',
-  right: '25px',
-  width: '80px',
-  height: '80px',
-  position: 'absolute',
-  backgroundColor: 'white',
-  borderRadius: '50%',
-  zIndex: '996'
-}
-
 class Tutorial extends Component {
     state = {
       index: 0

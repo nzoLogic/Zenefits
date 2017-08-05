@@ -44,15 +44,6 @@
   box-shadow: 0 0 0 0 rgba(255,255,255, 100) !important;
   animation: pulse 2s infinite !important;
 }
-.SAVED-PLACES {
-    width: 800px;
-    height: 800px;
-    visibility: visibile;
-    right: -348px;
-    top: -327px;
-    position: fixed;
-    z-index: 996;
-}
 
 .fade {
     animation: slow-fade 6s ease-in-out !important;
