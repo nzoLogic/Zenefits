@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'react-materialize'
 import './Tutorial.css'
 
 const SAVED_PLACES = {
@@ -82,12 +83,14 @@ class Tutorial extends Component {
           <p className="center">powered by Google</p>
         </div>
         <div className="tutorial-search white-text hidden">
-          <input id="demo-search" placeholder="Find places near you"></input>
+          <input id="demo-search" placeholder="Find places near you" autoFocus></input>
           <label for="demo-search" className="white-text">
             <h6>Search for awesome places near you</h6>
           </label>
         </div>
         <div style={SAVED_PLACES} className="hidden">
+        
+          
           <div id="places-background" className="cyan" style={TUTORIAL_TARGET} >
             <div className="white-text" style={TUTORIAL_CONTENT}>
               <h5>Save Your Places</h5>
@@ -96,8 +99,10 @@ class Tutorial extends Component {
             </div>      
           </div>
         </div>
-        <div className="hidden" style={BUTTON_CIRCLE} />
-      </div>
+        <Button floating 
+          icon="dehaze" 
+          className="cyan tutorial-button "/>
+       </div>
     )
   }
 }

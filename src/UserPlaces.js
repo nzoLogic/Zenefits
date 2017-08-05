@@ -30,7 +30,7 @@ const UserPlaces = (props) => {
               position: `fixed`,
               top: `36px`,
               right: `46px`,
-              zIndex: `998`}} 
+              zIndex: `995`}} 
               />
           }>
           <SideNavItem className='center'>
